@@ -393,3 +393,5 @@ D:\Gustavo\Projetos\ControleDeContatos\ControleDeContatos\obj\Debug\net5.0\refin
 D:\Gustavo\Projetos\ControleDeContatos\ControleDeContatos\obj\Debug\net5.0\ControleDeContatos.pdb
 D:\Gustavo\Projetos\ControleDeContatos\ControleDeContatos\obj\Debug\net5.0\ControleDeContatos.genruntimeconfig.cache
 D:\Gustavo\Projetos\ControleDeContatos\ControleDeContatos\obj\Debug\net5.0\ref\ControleDeContatos.dll
+D:\Gustavo\Projetos\ControleDeContatos\ControleDeContatos\obj\Debug\net5.0\Razor\Views\Usuario\Index.cshtml.g.cs
+D:\Gustavo\Projetos\ControleDeContatos\ControleDeContatos\obj\Debug\net5.0\Razor\Views\Usuario\Criar.cshtml.g.cs
