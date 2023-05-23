@@ -399,3 +399,5 @@ D:\Gustavo\Projetos\ControleDeContatos\ControleDeContatos\obj\Debug\net5.0\Contr
 D:\Gustavo\Projetos\ControleDeContatos\ControleDeContatos\obj\Debug\net5.0\ref\ControleDeContatos.dll
 D:\Gustavo\Projetos\ControleDeContatos\ControleDeContatos\obj\Debug\net5.0\Razor\Views\Login\Index.cshtml.g.cs
 D:\Gustavo\Projetos\ControleDeContatos\ControleDeContatos\obj\Debug\net5.0\Razor\Views\Shared\_LayoutDeslogado.cshtml.g.cs
+D:\Gustavo\Projetos\ControleDeContatos\ControleDeContatos\obj\Debug\net5.0\Razor\Views\Shared\Components\Menu\Default.cshtml.g.cs
+D:\Gustavo\Projetos\ControleDeContatos\ControleDeContatos\obj\Debug\net5.0\Razor\Views\Restrito\Index.cshtml.g.cs
