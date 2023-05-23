@@ -33,6 +33,7 @@ namespace ControleDeContatos.Repositorio
             // gravar no banco de dados
 
             usuario.DataCadastro = DateTime.Now;
+            //usuario.SetSenhaHash();
             _bancoContext.Usuarios.Add(usuario);
             _bancoContext.SaveChanges();
 
@@ -61,7 +62,7 @@ namespace ControleDeContatos.Repositorio
         {
             UsuarioModel usuarioDB = BuscarPorID(id);
 
-            if (usuarioDB == null) throw new System.Exception("Houve um erro na deleção do usuário!");
+            if (usuarioDB == null) throw new Exception("Houve um erro na deleção do usuário!");
 
             _bancoContext.Usuarios.Remove(usuarioDB);
             _bancoContext.SaveChanges();

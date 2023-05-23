@@ -56,7 +56,7 @@ namespace ControleDeContatos.Controllers
 
                 return RedirectToAction("Index");
             }
-            catch (System.Exception e)
+            catch (Exception e)
             {
                 TempData["MensagemErro"] = $"Ops, não conseguimos apagar seu usuário, mais detalhes do erro: {e.Message}";
                 return RedirectToAction("Index");
@@ -71,13 +71,14 @@ namespace ControleDeContatos.Controllers
                 if (ModelState.IsValid)
                 {
                     _usuarioRepositorio.Adicionar(usuario);
+
                     TempData["MensagemSucesso"] = "Usuário cadastrado com sucesso";
                     return RedirectToAction("Index");
                 }
 
                 return View(usuario);
             }
-            catch (System.Exception e)
+            catch (Exception e)
             {
                 TempData["MensagemErro"] = $"Ops, não conseguimos cadastrar seu usuário, tente novamente, detalhe do erro: {e.Message}";
                 return RedirectToAction("Index");
