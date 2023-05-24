@@ -14,7 +14,7 @@ namespace ControleDeContatos.Controllers
                                 ISessao sessao)
         {
             _usuarioRepositorio = usuarioRepositorio;
-            _sessao = sessao;   
+            _sessao = sessao;
         }
         public IActionResult Index()
         {
@@ -25,6 +25,11 @@ namespace ControleDeContatos.Controllers
                 return RedirectToAction("Index", "Home");
             }
 
+            return View();
+        }
+
+        public IActionResult RedefinirSenha()
+        {
             return View();
         }
 
@@ -65,6 +70,36 @@ namespace ControleDeContatos.Controllers
             catch (Exception e)
             {
                 TempData["MensagemErro"] = $"Ops, não conseguimos realizar seu login, tente novamente, detalhe do erro: {e.Message}";
+                return RedirectToAction("Index");
+            }
+        }
+
+        [HttpPost]
+        public IActionResult EnviarLinkParaRedefinirSenha(RedefinirSenhaModel redefinirSenhaModel)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    UsuarioModel usuario = _usuarioRepositorio.BuscarPorEmailELogin(redefinirSenhaModel.Email, redefinirSenhaModel.Login);
+
+                    if (usuario != null)
+                    {
+                        string novaSenha = usuario.GerarNovaSenha();
+                        _usuarioRepositorio.Atualizar(usuario);
+
+                        TempData["MensagemSucesso"] = $"Enviamos para seu e-mail cadastrado uma nova senha.";
+                        return RedirectToAction("Index", "Login");
+                    }
+
+                    TempData["MensagemErro"] = $"Não conseguimos redefinir sua senha. Por favor, verifique os dados informados.";
+                }
+
+                return View("Index");
+            }
+            catch (Exception e)
+            {
+                TempData["MensagemErro"] = $"Ops, não conseguimos redefinir sua senha, tente novamente, detalhe do erro: {e.Message}";
                 return RedirectToAction("Index");
             }
         }
