@@ -16,5 +16,9 @@ namespace ControleDeContatos.Models
         //[DataType(DataType.PhoneNumber)]
         //[RegularExpression(@"^\s*(\d{2}|\d{0})[-. ]?(\d{5}|\d{4})[-. ]?(\d{4})[-. ]?\s*$", ErrorMessage = "O número de telefone não é valido")]
         public string Celular { get; set; }
+
+        public int? UsuarioId { get; set; }
+
+        public UsuarioModel Usuario { get; set; }
     }
 }
