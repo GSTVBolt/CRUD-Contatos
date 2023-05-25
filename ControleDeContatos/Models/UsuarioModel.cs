@@ -18,7 +18,7 @@ namespace ControleDeContatos.Models
         [Required(ErrorMessage = "Digite a senha do usuário")]
         public string Senha { get; set; }
         public DateTime DataCadastro { get; set; }
-        public DateTime? DataAtualizacao  { get; set; } // ? - Pode ser null
+        public DateTime? DataAtualizacao { get; set; } // ? - Pode ser null
         [Required(ErrorMessage = "Informe o perfil do usuário")]
         public PerfilEnum? Perfil { get; set; } // pode ser null
 
@@ -29,12 +29,12 @@ namespace ControleDeContatos.Models
 
         //public void SetSenhaHash()
         //{
-        //    Senha = Senha.GerarHash();
+        //    Senha = Senha//.GerarHash();
         //}
-
         public string GerarNovaSenha()
         {
             string novaSenha = Guid.NewGuid().ToString().Substring(0, 8);
+            Senha = novaSenha.GerarHash();
             return novaSenha;
         }
     }
